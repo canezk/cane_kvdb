@@ -1,0 +1,49 @@
+buildscript{
+	repositories {
+    	mavenLocal()
+    	mavenCentral()
+	}
+}
+
+
+ext {
+	project_jdk = '1.8'
+}
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin:'war'
+apply plugin:'jetty'
+apply plugin:'application'
+
+sourceCompatibility = project_jdk
+targetCompatibility = project_jdk
+
+repositories {
+
+	//mavenLocal()
+    mavenCentral();
+}
+
+dependencyManagement {
+    applyMavenExclusions false
+    //imports {
+      //    mavenBom 'org.springframework.cloud:spring-cloud-zookeeper-dependencies:1.0.2.RELEASE'
+    //}
+}
+
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor 1, 'minutes'
+    exclude group: "org.slf4j", module: "slf4j-log4j12"
+}
+
+dependencies {	
+}
+
+task downloadLib(type: Copy) {
+	
+}
+
+jar {
+    
+}
