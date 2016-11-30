@@ -15,6 +15,14 @@
 
 > 5. 发现一些其他项目做不到的点
 
-## 项目管理
-gradle
+## 项目中依赖的工具
+
+1. gradle管理依赖
+
+2. log4j作为日志输出
+
+## 单元测试
+1. gradle test会跑所有的testcase
+
+2. gradle test -Dtest.single=TestCaneKVLogger 跑单个testcase
 
