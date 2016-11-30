@@ -14,6 +14,7 @@ import cane.kv.TestBaseClass;
 
 /**
  *
+ * Test {@linkplain CaneKVLogger}
  * @author cane
  *
  */
