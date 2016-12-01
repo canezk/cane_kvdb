@@ -13,7 +13,17 @@ package cane.kv.options;
  *
  */
 public enum WriteBufferMode {
-	WRITEBUFFERMODEDIRECT,
-	WRITEBUFFERMODEADAPTIVE
+	WRITEBUFFERMODEDIRECT(0), //每次buffer cache满了，就阻塞住所有的incoming请求，然后直接持久化
+	WRITEBUFFERMODEADAPTIVE(1); //每次buffer cache满了，降低incoming的写入速度而不是阻塞
+	
+	private int type;
+        
+        private WriteBufferMode(int t) {
+            this.type = t;
+        }
+        
+        public int getType() {
+            return this.type;
+        }
 
 }

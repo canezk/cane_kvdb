@@ -13,7 +13,17 @@ package cane.kv.options;
  *
  */
 public enum CheckSumType {
-	NOCHECKSUM,
-	CRC32C
+	NOCHECKSUM(0),
+	CRC32C(1);
+	
+	private int type;
+	
+	private CheckSumType(int t) {
+	    this.type = t;
+	}
+	
+	public int getType() {
+	    return this.type;
+	}
 
 }

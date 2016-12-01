@@ -13,7 +13,17 @@ package cane.kv.options;
  *
  */
 public enum HashType {	
-	MURMURHASH3_64,
-	XXHASH_64k
+	MURMURHASH3_64(0),
+	XXHASH_64k(1);
+	
+	private int type;
+        
+        private HashType(int t) {
+            this.type = t;
+        }
+        
+        public int getType() {
+            return this.type;
+        }
 	
 }

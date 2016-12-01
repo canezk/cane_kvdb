@@ -13,7 +13,17 @@ package cane.kv.options;
  *
  */
 public enum CompressionType {
-	NOCOMPRESSION,
-	LZ4COMPRESSION
+	NOCOMPRESSION(0),
+	LZ4COMPRESSION(1);
+	
+	private int type;
+        
+        private CompressionType(int t) {
+            this.type = t;
+        }
+        
+        public int getType() {
+            return this.type;
+        }
 	
 }

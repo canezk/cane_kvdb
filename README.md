@@ -26,3 +26,18 @@
 
 2. gradle test -Dtest.single=TestCaneKVLogger 跑单个testcase
 
+## 设计思路
+### 数据结构
+
+> 可选择方案如下：(参考现有的一些项目)
+
+> 1.b-tree
+
+> 2.hash表
+
+> 3.lsm
+
+> etc
+
+> 最终方案：是用哈希表实现(内存中是用哈希表，持久化的时候按照定义好的格式顺序写入文件系统)
+
