@@ -9,6 +9,19 @@
     </layout> 
   </appender> 
   
+  	<!--输出到文件（debug）-->
+    <appender name="fileAppenderError" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/CaneKV_debug.log" />
+        <param name="DatePattern" value=".yyyy-MM-dd" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="DEBUG" />
+            <param name="LevelMax" value="DEBUG" />
+        </filter>
+    </appender>
+  
   	<!--输出到文件（info）-->
     <appender name="fileAppenderInfo" class="org.apache.log4j.DailyRollingFileAppender">
         <param name="File" value="logs/CaneKV_info.log" />
