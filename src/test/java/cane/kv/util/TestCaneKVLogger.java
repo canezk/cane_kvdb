@@ -7,9 +7,9 @@
  */
 package cane.kv.util;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import cane.kv.TestBaseClass;
 
@@ -23,11 +23,11 @@ public class TestCaneKVLogger extends TestBaseClass {
 	
 	@Test
 	public void testLogging() {
-		Log log = LogFactory.getLog(TestCaneKVLogger.class);
-		log.debug("This is a debug log!");
-		log.warn("This is a warn log!");
-		log.info("This is a info log!");
-		log.error("This is an error log!");
+		Logger log = LoggerFactory.getLogger(TestCaneKVLogger.class);
+		log.debug("This is a debug log {}!", "cane");
+		log.warn("This is a warn log {}!", "cane");
+		log.info("This is a info log {}!", "cane");
+		log.error("This is an error log {}!", "cane");
 	}
 
 }

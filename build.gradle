@@ -37,6 +37,10 @@ dependencies {
 	compile group: 'commons-logging', name: 'commons-logging', version: '1.2'
 	// https://mvnrepository.com/artifact/com.lmax/disruptor
 	compile group: 'com.lmax', name: 'disruptor', version: '3.2.0'
+	// https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+	compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
+	// https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
+	compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.21'
 		
 	// junit
 	testCompile 'junit:junit:4.11'
