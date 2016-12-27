@@ -141,6 +141,7 @@ public class DataBase extends CaneKVDB{
         FileChannel fileChannel = null;
         DataBaseOptions dataBaseOptionsCandidate = null;        
         if(dbOptionsFileExists) {
+            //从数据库目录读取加载配置文件
             LOG.trace("Open DataBase,loading db_options file!");
             try {
                 try {
@@ -170,8 +171,12 @@ public class DataBase extends CaneKVDB{
             }
         }
         
-        if(!dbFileExist && (!dbOptionsFileExists && dataBaseOptionsCandidate == null)) {
-            
+        if(dbFileExist && (!dbOptionsFileExists || dataBaseOptionsCandidate == null)) {
+            //数据库文件夹已经创建了，但是不存在配置文件，从持久化的哈希表恢复
+        }
+        
+        if(!dbFileExist) {
+            //如果：1、没有创建过同名数据库目录；2、数据库文件不存在
         }
     }
 
