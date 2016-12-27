@@ -16,6 +16,12 @@ package cane.kv.options;
  */
 public class DataBaseOptions {
     
+    private static final String DB_OPTIONS = "/db_options";
+    
+    public static String getPath(String dbName) {
+        return dbName + DB_OPTIONS;
+    }
+    
     //*************** 以下是数据库启动之后的参数 *************//
     //********** 创建create之后就不能再改变 ***********************//
     
