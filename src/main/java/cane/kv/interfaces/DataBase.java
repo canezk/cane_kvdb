@@ -175,9 +175,11 @@ public class DataBase extends CaneKVDB{
             //数据库文件夹已经创建了，但是不存在配置文件，从持久化的哈希表恢复
         }
         
-        if(!dbFileExist) {
-            //如果：1、没有创建过同名数据库目录；2、数据库文件不存在
+        if(!dbFileExist || !dbOptionsFileExists || dataBaseOptionsCandidate == null) {
+            //如果：1、没有创建过同名数据库目录；2、数据库配置文件不存在；3、数据库配置存在，但是数据不正确
+            //那么就创建或者重写一下
         }
+        
     }
 
 }
